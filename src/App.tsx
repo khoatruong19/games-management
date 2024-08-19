@@ -1,12 +1,13 @@
-import { GamesTable } from "@/components/app";
 import { MainLayout } from "@/layouts";
 import AppProvider from "@/providers";
+import { TopHeader, GamesTabs } from "@/components/app";
 
 function App() {
   return (
     <AppProvider>
       <MainLayout>
-        <GamesTable />
+        <TopHeader />
+        <GamesTabs />
       </MainLayout>
     </AppProvider>
   );
