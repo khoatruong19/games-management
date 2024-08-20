@@ -4,7 +4,7 @@ ___
 ![Dark](https://i.ibb.co/cktjxQm/image.png)
 
 ## Description
-This is a ReactJS + Vite project named Games Management. Essentially, this application allows users to exchange one cryptocurrency for another.
+This is a ReactJS + Vite project named Games Management. Essentially, this application allows users to manage their games.
 
 This is the link of the project: [Games Management](https://games-management.vercel.app).
 Hope you guys enjoy it!
