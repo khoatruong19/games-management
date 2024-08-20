@@ -1,50 +1,37 @@
-# React + TypeScript + Vite
+# Games Management
+___
+![Light](https://i.ibb.co/PgwgNQD/image.png)
+![Dark](https://i.ibb.co/cktjxQm/image.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+This is a ReactJS + Vite project named Token Converter. Essentially, this application allows users to exchange one cryptocurrency for another.
 
-Currently, two official plugins are available:
+This is the link of the project: [Token Converter](https://99-tech-five.vercel.app/).
+Hope you guys enjoy it!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies
+These are technologies and libraries used to build this application:
++ ReactJS + Vite
++ TailwindCSS + Radix UI
++ react-hook-form + zod
++ Tanstack Query
+  
+## Features
++ Searching and select tokens to convert
++ Reset form inputs
++ Swap position between two selected tokens
++ Fully responsive
++ Two themes "dark" and "light"
 
-## Expanding the ESLint configuration
+## Installation
+If you want to run the project at your local machine, here are the steps:
+1. Clone this repository and install all dependencies.
+2. Run projects using `npm run dev` script if you're using **npm** or `yarn dev` for **yarn**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Contributing
+This is just a small side project for my personal works. Please don't use this project for:
+1. Commercial Purposes
+2. Distributing this project after modifying it
+3. You may not use this without appropriate attribution
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+**If you have any advices or suggestions to make the app better, feel free to submit them to this repo. Thanks!**
