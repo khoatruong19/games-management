@@ -6,7 +6,7 @@ ___
 ## Description
 This is a ReactJS + Vite project named Games Management. Essentially, this application allows users to manage their games.
 
-This is the link of the project: [Games Management](https://games-management.vercel.app).
+This is the link to the deployed project: [Games Management](https://games-management.vercel.app).
 Hope you guys enjoy it!
 
 ## Technologies
