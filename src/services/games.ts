@@ -34,8 +34,8 @@ const getGames = ({
 
     const filteredGames: Game[] = [];
     games.forEach((game) => {
-      const isStatusMatched = checkMatchStatus(game, status);
-      const isSearchMatched = checkMatchSearch(game, search);
+      const isStatusMatched = checkMatchStatus(game.status, status);
+      const isSearchMatched = checkMatchSearch(game.name, search);
       if (isStatusMatched && isSearchMatched) filteredGames.push(game);
     });
 

@@ -9,13 +9,13 @@ export function cn(...inputs: ClassValue[]) {
 
 export const formatReleaseDate = (date: Date) => format(date, "PP");
 
-export const checkMatchStatus = (game: Game, status?: GameStatus) =>
-  !status ? true : status && game.status === status;
+export const checkMatchStatus = (gameStatus: GameStatus, status?: GameStatus) =>
+  !status ? true : status && gameStatus === status;
 
-export const checkMatchSearch = (game: Game, search?: string) =>
+export const checkMatchSearch = (gameName: string, search?: string) =>
   !search
     ? true
-    : search && game.name.toLowerCase().includes(search.trim().toLowerCase());
+    : search && gameName.toLowerCase().includes(search.trim().toLowerCase());
 
 export const exportArrayToCsv = (
   headers: string[],
