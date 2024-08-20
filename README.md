@@ -4,22 +4,26 @@ ___
 ![Dark](https://i.ibb.co/cktjxQm/image.png)
 
 ## Description
-This is a ReactJS + Vite project named Token Converter. Essentially, this application allows users to exchange one cryptocurrency for another.
+This is a ReactJS + Vite project named Games Management. Essentially, this application allows users to exchange one cryptocurrency for another.
 
-This is the link of the project: [Token Converter](https://99-tech-five.vercel.app/).
+This is the link of the project: [Games Management](https://games-management.vercel.app).
 Hope you guys enjoy it!
 
 ## Technologies
 These are technologies and libraries used to build this application:
-+ ReactJS + Vite
-+ TailwindCSS + Radix UI
++ ReactJS + Vite + Typescript
++ TailwindCSS + shadcnUI
 + react-hook-form + zod
 + Tanstack Query
   
 ## Features
-+ Searching and select tokens to convert
-+ Reset form inputs
-+ Swap position between two selected tokens
++ Display games in a paginated table
++ Add new game
++ Edit game
++ Delete game
++ Search games by name
++ Filter games by status
++ Sync search and filter with URL query params
 + Fully responsive
 + Two themes "dark" and "light"
 
