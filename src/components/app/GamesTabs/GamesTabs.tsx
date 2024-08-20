@@ -10,13 +10,18 @@ import {
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { GamesTable } from "./GamesTable";
 import { GamesTabsHeader } from "./GamesTabsHeader";
-import { Tab } from "@/lib/types";
+import { GameStatus, Tab } from "@/lib/types";
 import { Typography } from "@/components/common";
+import { useGames } from "@/providers/GamesProvider";
+import { GamesPagination } from "./GamesPagination";
 
 export const GamesTabs = () => {
-  const [tab, setTab] = useState<Tab>("all");
+  const { from, to, total, status, filterGameByStatus } = useGames();
+
+  const [tab, setTab] = useState<Tab>(status ?? "all");
 
   const onTabChange = (value: string) => {
+    filterGameByStatus(value === "all" ? undefined : (value as GameStatus));
     setTab(value as Tab);
   };
 
@@ -37,12 +42,17 @@ export const GamesTabs = () => {
             </CardContent>
             <CardFooter>
               <Typography level="p7" color="mutedForeground">
-                Showing <strong>1-10</strong> of <strong>32</strong> products
+                Showing{" "}
+                <strong>
+                  {from}-{to}
+                </strong>{" "}
+                of <strong>{total}</strong> products
               </Typography>
             </CardFooter>
           </Card>
         </TabsContent>
       </Tabs>
+      <GamesPagination />
     </main>
   );
 };

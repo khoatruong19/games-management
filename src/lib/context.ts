@@ -5,8 +5,8 @@ export interface CreateContextOptions<ContextType> {
    * If `true`, React will throw if context is `null` or `undefined`
    * In some cases, you might want to support nested context, so you can set it to `false`
    */
-  initialValues?: ContextType;
   strict?: boolean;
+  initialValues?: ContextType;
   errorMessage?: string;
   name?: string;
 }

@@ -6,9 +6,9 @@ export type NavItem = {
   icon: LucideIcon;
 };
 
-export type GameStatus = "all" | "developing" | "upcoming" | "released";
+export type GameStatus = "developing" | "upcoming" | "released" | "cancelled";
 
-export type Tab = "all" & GameStatus;
+export type Tab = "all" | GameStatus;
 
 export type Game = {
   id: string;

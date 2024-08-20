@@ -24,6 +24,7 @@ const initialValues: ThemeProviderValues = {
 const [Provider, useTheme] = createContext<ThemeProviderValues>({
   initialValues,
   name: "ThemeProvider",
+  strict: true,
   errorMessage: "useTheme must be used within a ThemeProvider",
 });
 

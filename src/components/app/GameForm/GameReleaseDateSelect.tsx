@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -10,9 +9,17 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Typography } from "@/components/common";
+import { ControllerRenderProps } from "react-hook-form";
+import { GameFormSchema } from "@/lib/schemas";
 
-export const GameReleaseDateSelect = () => {
-  const [date, setDate] = useState<Date>();
+export type GameReleaseDateSelectProps = {
+  field: ControllerRenderProps<GameFormSchema, "releaseDate">;
+};
+
+export const GameReleaseDateSelect = ({
+  field,
+}: GameReleaseDateSelectProps) => {
+  const date = field.value;
 
   return (
     <Popover>
@@ -20,7 +27,7 @@ export const GameReleaseDateSelect = () => {
         <Button
           variant={"outline"}
           className={cn(
-            "w-[280px] justify-start text-left font-normal",
+            "w-[310px] justify-start text-left font-normal",
             !date && "text-muted-foreground"
           )}
         >
@@ -32,10 +39,9 @@ export const GameReleaseDateSelect = () => {
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0">
         <Calendar
-          id="release-date"
           mode="single"
           selected={date}
-          onSelect={setDate}
+          onDayClick={field.onChange}
           initialFocus
         />
       </PopoverContent>

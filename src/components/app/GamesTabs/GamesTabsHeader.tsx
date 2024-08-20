@@ -13,6 +13,7 @@ import { TABS } from "@/lib/constants";
 import { File, ListFilter, PlusCircle } from "lucide-react";
 import { GameForm } from "../GameForm";
 import { Tab } from "@/lib/types";
+import { useGames } from "@/providers/GamesProvider";
 
 type GamesTabsHeaderProps = {
   selectedTab: Tab;
@@ -23,6 +24,8 @@ export const GamesTabsHeader = ({
   selectedTab,
   onSelectTab,
 }: GamesTabsHeaderProps) => {
+  const { exportToCSV } = useGames();
+
   return (
     <div className="flex items-center">
       <TabsList className="hidden md:inline-flex">
@@ -41,7 +44,7 @@ export const GamesTabsHeader = ({
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-40">
-            <DropdownMenuLabel>Filter by</DropdownMenuLabel>
+            <DropdownMenuLabel>Filter by status</DropdownMenuLabel>
             <DropdownMenuSeparator />
             {TABS.map((status) => (
               <DropdownMenuCheckboxItem
@@ -55,12 +58,19 @@ export const GamesTabsHeader = ({
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
-        <Button size="sm" variant="outline" className="h-8 gap-1">
+        <Button
+          size="sm"
+          variant="outline"
+          className="h-8 gap-1"
+          onClick={exportToCSV}
+        >
           <File className="h-3.5 w-3.5" />
           <Typography color="inherit">Export</Typography>
         </Button>
         <GameForm
-          type="add"
+          formType={{
+            type: "add",
+          }}
           triggerEle={
             <Button size="sm" className="h-8 gap-1">
               <PlusCircle className="h-3.5 w-3.5" />
